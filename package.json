@@ -2,7 +2,7 @@
   "name": "amazona",
   "version": "1.0.0",
   "description": "",
-  "main": "express.js",
+  "main": "index.js",
   "scripts": {
     "start": "nodemon --watch backend --exec babel-node backend/server.js"
   },
