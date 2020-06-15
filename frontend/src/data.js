@@ -31,7 +31,7 @@ export default {
       price: 40,
       review: 6.5,
       numReviews: 8,
-      countInStock: 8
+      countInStock: 0
     }
   ]
 }

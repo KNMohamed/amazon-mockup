@@ -16,6 +16,11 @@ export default function ProductPage(props) {
     }
   }, [dispatch, props.match.params.id]);
 
+  const handleAddToCart = () => {
+    props.history.push(`/cart/${props.match.params.id}?qty=${qty}`);
+  }
+
+
   return <div>
     <div className="back-to-result">
       <Link to="/">Back to result</Link>
@@ -38,15 +43,16 @@ export default function ProductPage(props) {
             <div className="details-action">
               <ul>
                 <li>Price: {product.price}</li>
-                <li>Status: {product.status}</li>
+                <li>Status: {product.countInStock > 0?"In stock":"Out of stock"}</li>
                 <li>Qty:
+                  {product.countInStock > 0 ?
                   <select value={qty} onChange={(e) => { setQty(e.target.value); }}>
                   {[...Array(product.countInStock).keys()].map(x =>
                       <option key={x + 1} value={x + 1}>{x + 1}</option>
                     )}
-                  </select>
+                  </select>:"0"}
                 </li>
-                <li><button className="button primary">Add to cart</button></li>
+                <li><button onClick={handleAddToCart} className="button primary" disabled={product.countInStock === 0} >Add to cart</button></li>
               </ul>
             </div>
           </div>

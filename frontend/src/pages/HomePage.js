@@ -16,9 +16,6 @@ export default function HomePage() {
     };
   }, [dispatch]);
 
-  
-  console.log(loading);
-  console.log(products);
   return (
     loading ? <div>loading...</div> :
       error ? <div>Error</div> :
