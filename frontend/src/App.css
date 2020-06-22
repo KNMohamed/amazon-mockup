@@ -239,6 +239,14 @@ a:hover {
   background-color: #f0c040;
 }
 
+.button.secondary {
+  background-color: #f0f0f0;
+}
+
+.text-center {
+  text-align: center;
+}
+
 .button:hover {
   border: .1rem #404040 solid;
 }
@@ -274,7 +282,7 @@ a:hover {
   justify-content: space-between;
   align-items: flex-start;
   padding-bottom: 1rem;
-  margin-bottom : 1rem;
+  margin-bottom: 1rem;
   border-bottom: .1rem solid #808080;
 }
 
@@ -295,4 +303,151 @@ a:hover {
   flex: 1 1;
   font-size: 2.5rem;
   text-align: right;
+}
+
+/* forms */
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 32rem;
+  padding: 2rem;
+  height: 100%;
+  border: .1rem #c0c0c0 solid;
+  border-radius: .5rem;
+}
+
+.form-container h2, .form-container h3 {
+  margin: 0
+}
+
+.form-container li {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.form-container li input {
+  padding: 1rem;
+  border: .1rem solid #c0c0c0;
+  border-radius: .5rem;
+}
+
+/* Products */
+
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.content-margined {
+  margin: 5rem;
+}
+
+.table {
+  width: 100%;
+}
+
+.table th {
+  text-align: left;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+
+/* Checkout Steps */
+
+.checkout-steps {
+  display: flex;
+  justify-content: space-between;
+  width: 40rem;
+  margin: 1rem auto;
+}
+
+.checkout-steps>div {
+  border-top: .3rem solid #c0c0c0;
+  color: #c0c0c0;
+  flex: 1 1;
+  padding-top: 1rem;
+}
+
+.checkout-steps>div.active {
+  border-top: .3rem solid #f08000;
+  color: #f08000;
+}
+
+/* Place Order */
+
+.placeorder {
+  display: flex;
+  flex-grow: wrap;
+  padding: 1rem;
+  justify-content: space-between;
+}
+
+.placeorder-info {
+  flex: 3 1 60rem;
+}
+
+.placeorder-action {
+  flex: 1 1 20rem;
+  border: .1rem #c0c0c0 solid;
+  border-radius: .5rem;
+  background-color: #fcfcfc;
+  padding: 1rem;
+}
+
+.placeorder-action>ul {
+  padding: 0;
+  list-style-type: none;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.placeorder-action>ul>li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.placeorder-action>ul>li:not(:first-child) {
+  margin: 0 2rem;
+}
+
+.placeorder-action>ul>li:last-child{
+  height: 8rem;
+}
+
+.placeorder-action>ul>li:last-child > button{
+font-size: 2rem;
+font-weight: bold;
+color: #c04000;
+}
+
+.placeorder-info>div {
+  border: .1rem #c0c0c0 solid;
+  border-radius: .5rem;
+  background-color: #fcfcfc;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.placeorder-info>div:first-child {
+  margin-top: 0;
+}
+
+.placeorder-info>div:last-child {
+  margin-bottom: 0;
 }

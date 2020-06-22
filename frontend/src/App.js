@@ -1,11 +1,22 @@
 import React from 'react';
 import './App.css';
 import { Route, Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import HomePage from './pages/HomePage'
 import ProductPage from './pages/ProductPage'
 import CartPage from './pages/CartPage'
+import SigninPage from './pages/SigninPage';
+import RegisterPage from './pages/RegisterPage';
+import ManageProducts from './pages/ManageProducts';
+import ShippingPage from './pages/ShippingPage';
+import PaymentPage from './pages/PaymentPage';
+import PlaceOrderPage from './pages/PlaceOrderPage';
 
 function App() {
+
+  const userSignIn = useSelector(state => state.userSignIn);
+  const { userInfo } = userSignIn;
+
   const openMenu = () => { document.querySelector(".sidebar").classList.add("open"); }
   const closeMenu = () => { document.querySelector(".sidebar").classList.remove("open"); }
 
@@ -18,7 +29,10 @@ function App() {
         </div>
         <div className="header-links">
           <a href="cart.html">Cart</a>
-          <a href="signin.html">Sign in</a>
+          {
+            userInfo ? <Link to="/profile/">{userInfo.name}</Link>:
+            <Link to="/signin">Sign-in</Link>
+          }
         </div>
       </header>
       <aside className="sidebar">
@@ -31,7 +45,13 @@ function App() {
       </aside>
       <main className="main">
         <div className="content">
-          <Route path="/products/:id" component={ProductPage} />
+          <Route path="/signin" component={SigninPage}/>
+          <Route path="/register" component={RegisterPage}/>
+          <Route path="/placeorder"  component={PlaceOrderPage}/>
+          <Route path="/payment"  component={PaymentPage}/>
+          <Route path="/shipping"  component={ShippingPage}/>
+          <Route path="/products"  component={ManageProducts}/>
+          <Route path="/product/:id"  component={ProductPage} />
           <Route path="/cart/:id?" component={CartPage} />
           <Route path="/" exact={true} component={HomePage} />
         </div>

@@ -6,6 +6,7 @@ logs
 **/*.back.*
 
 node_modules
+/node_modules
 bower_components
 
 *.sublime*
@@ -15,3 +16,17 @@ thumb
 sketch
 
 template
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+### visual studio dependencies ###
+*.suo
+*.ncb
+*.user
+*.aps
+*.cachefiles
