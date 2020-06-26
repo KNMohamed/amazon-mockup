@@ -23,7 +23,7 @@ export default function ManageProducts(props) {
 
   /* Product Delete */
   const productDelete = useSelector(state => state.productDelete);
-  const { loading: loadingDelete, success: successDelete, error: errorDelete } = productDelete;
+  const { success: successDelete } = productDelete;
 
 
   const dispatch = useDispatch();

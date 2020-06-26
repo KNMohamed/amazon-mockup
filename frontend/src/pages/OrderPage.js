@@ -14,7 +14,7 @@ export default function OrderPage(props) {
     dispatch(detailsOrder(props.match.params.id));
     return () => {
     }
-  }, [dispatch]);
+  }, [dispatch, props.match.params.id]);
 
   const orderDetails = useSelector(state => state.orderDetails);
   const { loading, order, error } = orderDetails;

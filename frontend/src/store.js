@@ -12,7 +12,7 @@ const userInfo = Cookie.getJSON("userInfo") || null;
 const shipping = Cookie.getJSON("shipping") || {};
 const payment = Cookie.getJSON("payment") || {};
 
-const initialState = {cart: {cartItems, shipping: {}, payment: {}}, userSignIn: { userInfo } };
+const initialState = {cart: {cartItems}, shipping, payment, userSignIn: { userInfo } };
 const reducer = combineReducers({
   productList: productListReducer,
   productDetails: productDetailsReducer,

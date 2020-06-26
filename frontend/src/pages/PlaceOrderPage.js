@@ -9,7 +9,7 @@ export default function PlaceOrderPage(props) {
   const { cartItems, shipping, payment } = cart;
 
   const orderCreate = useSelector(state => state.orderCreate);
-  const {loading, success, error, order} = orderCreate;
+  const {success, order} = orderCreate;
 
   if (!shipping.address) {
     props.history.push("/shipping");

@@ -7,7 +7,6 @@ export default function RegisterPage(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [rePassword, setRePassword] = useState("");
   const dispatch = useDispatch();
   const redirect = props.location.search?props.location.search.split("=")[1]:'/'
 
@@ -53,7 +52,7 @@ export default function RegisterPage(props) {
           </li>
           <li>
             <label htmlFor="rePassword">Re-enter Password</label>
-            <input type="password" name="rePassword" id="rePassword" required={true} onChange={(e) => setRePassword(e.target.value)} />
+            <input type="password" name="rePassword" id="rePassword" required={true} />
           </li>
           <li><button className="button primary" type="submit">Register</button></li>
           <li>Already have an account?</li>
