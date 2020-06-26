@@ -22,4 +22,6 @@ app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
 app.use("/api/orders", orderRoute);
 
-app.listen(5000, () => {console.log("Server started at htpp://localhost:5000")});
+app.listen(config.PORT, () => {
+  console.log('Server started at http://localhost:5000');
+});
