@@ -3,7 +3,7 @@ import { savePayment } from '../actions/cartActions';
 import { useDispatch } from 'react-redux';
 import CheckoutSteps from '../components/CheckoutSteps';
 
-export default function ShippingPage(props) {
+export default function PaymentPage(props) {
   const [paymentMethod, setPaymentMethod] = useState("");
   const dispatch = useDispatch();
 

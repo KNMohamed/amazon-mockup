@@ -2,12 +2,15 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import CheckoutSteps from '../components/CheckoutSteps';
+import { createOrder } from '../actions/orderActions';
 
 export default function PlaceOrderPage(props) {
   const cart = useSelector(state => state.cart);
   const { cartItems, shipping, payment } = cart;
 
-  console.log(cartItems, shipping, payment);
+  const orderCreate = useSelector(state => state.orderCreate);
+  const {loading, success, error, order} = orderCreate;
+
   if (!shipping.address) {
     props.history.push("/shipping");
   } else if (!payment.paymentMethod) {
@@ -23,18 +26,25 @@ export default function PlaceOrderPage(props) {
 
   const placeOrderHandler = () => {
     //Create an order
+    dispatch(createOrder({
+      orderItems: cartItems,
+      shipping,
+      payment,
+      itemsPrice,
+      shippingPrice,
+      taxPrice,
+      totalPrice
+    }));
   }
 
   useEffect(() => {
-
+    if(success){
+      props.history.push("/order/" + order._id);
+    }
     return () => {
       //
     }
-  }, []);
-
-  const checkoutHandler = () => {
-    props.history.push("/signin?redirect=shipping");
-  }
+  }, [success, order, props]);
 
   return <div>
     <CheckoutSteps step1 step2 step3 step4 ></CheckoutSteps>
@@ -72,7 +82,7 @@ export default function PlaceOrderPage(props) {
           </div>
                 :
                 cartItems.map(item =>
-                  <li>
+                  <li key={item._id}>
                     <div className="cart-image">
                       <img src={item.image} alt="product" />
                     </div>

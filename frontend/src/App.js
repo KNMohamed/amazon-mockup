@@ -11,6 +11,7 @@ import ManageProducts from './pages/ManageProducts';
 import ShippingPage from './pages/ShippingPage';
 import PaymentPage from './pages/PaymentPage';
 import PlaceOrderPage from './pages/PlaceOrderPage';
+import OrderPage from './pages/OrderPage';
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
       </aside>
       <main className="main">
         <div className="content">
+          <Route path="/order/:id" component={OrderPage}/>
           <Route path="/signin" component={SigninPage}/>
           <Route path="/register" component={RegisterPage}/>
           <Route path="/placeorder"  component={PlaceOrderPage}/>

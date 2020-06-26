@@ -271,13 +271,13 @@ a:hover {
   padding: 1rem;
 }
 
-.cart-list-container {
+.cart-list-container, .order-list-container {
   padding: 0;
   list-style-type: none;
   padding: 1rem;
 }
 
-.cart-list-container li {
+.cart-list-container li, .order-list-container li {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -286,20 +286,20 @@ a:hover {
   border-bottom: .1rem solid #808080;
 }
 
-.cart-list-container li img {
+.cart-list-container li img, .order-list-container li img {
   max-width: 10rem;
   max-height: 10rem;
 }
 
-.cart-image {
+.cart-image, .order-image {
   flex: 1 1;
 }
 
-.cart-name {
+.cart-name, .order-name {
   flex: 8 1;
 }
 
-.cart-price {
+.cart-price, .order-price {
   flex: 1 1;
   font-size: 2.5rem;
   text-align: right;
@@ -427,13 +427,18 @@ a:hover {
 }
 
 .placeorder-action>ul>li:last-child{
-  height: 8rem;
+  height: 4rem;
 }
 
 .placeorder-action>ul>li:last-child > button{
 font-size: 2rem;
 font-weight: bold;
-color: #c04000;
+}
+
+.placeorder-action>ul>li:nth-child(5){
+  color: #c04000;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .placeorder-info>div {
