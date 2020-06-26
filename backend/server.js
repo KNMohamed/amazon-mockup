@@ -1,14 +1,12 @@
 import express from 'express';
 import data from './data';
-import dotenv from 'dotenv';
 import config from './config';
 import mongoose from 'mongoose'
 import userRoute from './routes/userRoute';
 import productRoute from './routes/productRoute';
+import orderRoute from './routes/orderRoute';
 
 import bodyParser from 'body-parser';
-
-dotenv.config();
 
 const mongodbURL = config.MONGODB_URL;
 //Connect to MongoDB
@@ -23,19 +21,6 @@ app.use(bodyParser.json());
 
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
-
-/*
-app.get("/api/products/:id", (req,res) => {
-  const productId = req.params.id
-  const product = data.products.find( x=> x._id === parseInt(productId));
-  if(product)
-    res.send(product);
-  else
-    res.status(404).send({msg: "Product Not Found"});
-}); 
-
-app.get("/api/products", (req,res) => {
-  res.send(data.products);
-}); */
+app.use("/api/orders", orderRoute);
 
 app.listen(5000, () => {console.log("Server started at htpp://localhost:5000")});
